@@ -1,0 +1,21 @@
+{
+  "manifest_version":2,
+  "name":"nhlScores",
+  "description":"Check NHL Scores",
+  "version":"0.1",
+
+  "permissions":[
+    "alarms",
+    "tabs",
+    "webNavigation"
+  ],
+  "homepage_url":"http://makeACoolPageHere.com",
+  "browser_action":{
+    "default_title":"NHL Scores",
+    "default_popup":"popup.html"
+  },
+  "background":{
+    "scripts":["js/jquery.js, js/background.js"],
+    "persistent":false
+  }
+}
