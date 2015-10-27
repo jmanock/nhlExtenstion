@@ -9,17 +9,17 @@
 
     function performAjaxSetup(){
       $(document).ajaxStart(function(){
-        $('#reload').html('Loading...Please wait!');
+        $('#reload').html('Loading.. Please Wait');
         $('#reload').off();
       });
 
       $(document).ajaxComplete(function(event, xhr, settings){
-        $('#reload').html('Reload.');
+        $('#reload').html('Reload');
         feed.bindUI();
       });
     }
 
-    var feed = {
+    var feed ={
       xml:'',
       init:function(){
         this.bindUI();
@@ -32,26 +32,29 @@
         });
       },
       loadFeed:function(){
+        this.fetchFeed();
+      },
+      fetchFeed:function(){
         newsHolder.empty();
         $.ajax({
           url:feedUrl,
           dataType:'xml',
           method:'post',
-
           beforeSend:function(){},
-          success:function(){
+          success:function(xml){
             feed.populateExt(xml);
           },
           complete:function(){},
         });
       },
-      populatExt:function(xml){
+      populateExt:function(xml){
         var anchors = beforeFeed;
         $(xml).find('item').each(function(index, elem){
           var title = $(elem).find('title').text().trim();
           var link = $(elem).find('link').text().trim();
           var pubDate = $(this).find('pubDate').text().trim().substring(0,16);
-          var anchor = beforeFeedItem +'<a href="'+link+'" target="_blank" title="'+pubDate+'">'+title+'</a>'+afterFeedItem;
+
+          var anchor = beforeFeedItem + '<a href="' + link + '" target="_blank" title="' + pubDate + '">' + title + '</a>' + afterFeedItem;
           anchors += anchor;
         });
         anchors += afterFeed;
