@@ -2,13 +2,20 @@
   <head>
     <title>NHL Scores</title>
     <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/nhl.css">
   </head>
   <body>
-    <div id="main">
-      <div id="logo" ></div>
-      <div class="news-feed"></div>
-      <div id="reload" class='button' tabindex='5'>Reload!</div>
-      <footer>Designed &amp; developed by JON</footer>
+    <div id="container" class='all'>
+      <div id="header">
+        <a href="#" class='navPrev'>Prev Day</a>
+        <a href="#" class='navNext'>Next Day</a>
+      </div>
+      <div id="dateTitle">
+        <p class='date'></p>
+      </div>
+      <div id="games">
+        <p id='g'></p>
+      </div>
     </div>
     <script src='js/jquery.js'></script>
     <script src='js/background.js'></script>

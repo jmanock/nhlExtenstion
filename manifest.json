@@ -1,22 +1,16 @@
 {
   "manifest_version":2,
-  "name":"nhlScores",
-  "description":"Check NHL Scores",
-  "version":"0.1",
+  "name":"Nhl Scores",
+  "description":"NHL scores extenstion",
+  "version":"0.2",
 
-  "permissions":[
-    "alarms",
-    "tabs",
-    "webNavigation",
-    "*://*.sports.yahoo.com/nhl/*"
-  ],
-  "homepage_url":"http://makeACoolPageHere.com",
   "browser_action":{
-    "default_title":"NHL Scores",
     "default_popup":"popup.html"
   },
+  "permissions":[
+    "http://www.thescore.com/"
+  ],
   "background":{
-    "scripts":["js/jquery.js", "js/background.js"],
-    "persistent":false
-  }
+    "scripts":["js/background.js","js/jquery.js"]
+    }
 }
