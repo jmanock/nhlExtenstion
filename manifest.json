@@ -8,7 +8,7 @@
     "alarms",
     "tabs",
     "webNavigation",
-    "*://*.sports.yahoo.com/*"
+    "*://*.sports.yahoo.com/nhl/*"
   ],
   "homepage_url":"http://makeACoolPageHere.com",
   "browser_action":{

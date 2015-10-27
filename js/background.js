@@ -1,6 +1,6 @@
 (function(){
   var FeedReader = function(){
-    var feedUrl = 'https://www.sports.yahoo.com/nhl/scorboard/';
+    var feedUrl = 'https://www.sports.yahoo.com/nhl/scorboard';
     var newsHolder = $('.news-feed');
     var beforeFeed = '<ul>';
     var afterFeed = '</ul>';
@@ -38,10 +38,11 @@
         newsHolder.empty();
         $.ajax({
           url:feedUrl,
-          dataType:'xml',
+          dataType:'html',
           method:'post',
           beforeSend:function(){},
           success:function(xml){
+
             feed.populateExt(xml);
           },
           complete:function(){},
@@ -49,16 +50,7 @@
       },
       populateExt:function(xml){
         var anchors = beforeFeed;
-        $(xml).find('item').each(function(index, elem){
-          var title = $(elem).find('title').text().trim();
-          var link = $(elem).find('link').text().trim();
-          var pubDate = $(this).find('pubDate').text().trim().substring(0,16);
-
-          var anchor = beforeFeedItem + '<a href="' + link + '" target="_blank" title="' + pubDate + '">' + title + '</a>' + afterFeedItem;
-          anchors += anchor;
-        });
-        anchors += afterFeed;
-        newsHolder.append(anchors);
+        
       }
     };
     return feed;
