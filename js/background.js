@@ -1,6 +1,6 @@
 (function(){
   var FeedReader = function(){
-    var feedUrl = 'http://www.gcuf.edu.pk/feed';
+    var feedUrl = 'https://www.sports.yahoo.com/nhl/scorboard/';
     var newsHolder = $('.news-feed');
     var beforeFeed = '<ul>';
     var afterFeed = '</ul>';

@@ -8,7 +8,7 @@
     "alarms",
     "tabs",
     "webNavigation",
-    "*://*.gcuf.edu.pk/*"
+    "*://*.sports.yahoo.com/*"
   ],
   "homepage_url":"http://makeACoolPageHere.com",
   "browser_action":{
