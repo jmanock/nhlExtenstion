@@ -23,7 +23,7 @@
       xml:'',
       init:function(){
         this.bindUI();
-        perfomrAjaxSetup();
+        performAjaxSetup();
         this.loadFeed();
       },
       bindUI:function(){
