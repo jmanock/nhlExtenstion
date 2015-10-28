@@ -49,7 +49,28 @@
       },
       populateExt:function(xml){
         var anchors = beforeFeed;
+        /* TODO
+          ~ Need Todays date
+          ~ The Ids of Todays games
+          ~ Maybe the teams
+        */
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+
+        if(dd < 10){
+          dd = '0'+dd;
+        }
+
+        if(mm < 10){
+          mm = '0'+mm;
+        }
+        today = yyyy+mm+dd;
         console.log(xml);
+        $(xml).each(function(i,e){
+
+        });
       }
     };
     return feed;
