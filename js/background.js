@@ -1,117 +1,21 @@
 $(document).ready(function(){
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1;
+  var yyyy = today.getFullYear();
+
+  if(dd < 10){
+    dd = '0'+dd;
+  }
+  if(mm < 10){
+    mm = '0'+dd;
+  }
+  today = yyyy +'-'+mm+'-'+dd;
+
   $.ajax({
-    url:'http://www.thescore.com/nhl/events/day/'
+    url:'http://www.thescore.com/nhl/events/day'+today
   }).done(function(html){
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1;
-    var yyyy = today.getFullYear();
-    if(dd <10){
-      dd = '0'+dd;
-    }
-    if(mm<10){
-      mm = '0'+mm;
-    }
-    today = yyyy+'-'+mm+'-'+dd;
-    console.log(today);
-    globalHtml = html;
-    var date = getDateString();
-    var find = '#'+date+'.games';
-    offset =0;
-    showScores(html,date);
-  });
-  function showScores(html, date){
-    $('#container').css('width', 'auto');
-    $('#games').empty();
-    var find = '#'+date+'.games';
-    $('p.date').empty();
-    $('p.date').append(fanciy(date));
-    var f = $(html).find(find);
-    var str = $(html).find(find).each(function(i,el){
-      $(this).find('.gamelist').each(function(i1,el1){
-        var src = '/pp.png';
-        $(el1).find('.go').remove();
-        $('img[alt="Nhl_icon_powerplay"]').attr('src',src);
-        $('#games').append(el1);
-      });
-    });
-    if(!f.length){
-      $('#games').append('No Games to display');
-    }
-  }
-  function getDateString(offset){
-    offset = offset || 0;
-    var d = getOffsetDayNum(offset);
-    var m = getMonthString(d.getMonth());
-    var day = d.getDate();
-    if(day < 10){
-      day = '0'+day;
-    }
-    var date = m +'_'+day;
-    return date;
-  }
-  function fancify(date){
-    var m_names = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
-    var d = getOffsetDayNum(offset);
-    var m = d.getMonth();
-    var month = m_names[m];
-    var day = date.substr(date.length -2);
-    return month + ' '+day;
-  }
-  function getOffsetDayNum(offset){
-    var d = new Date();
-    d.setDate((d.getDate())+offset);
-    return d;
-  }
-  function getMonthDtring(monthNum){
-    var n = monthNum + 1;
-    var month = '';
-    switch(n){
-      case 1:
-      month = 'jan';
-      break;
-      case 2:
-      month = 'feb';
-      break;
-      case 3:
-      month = 'mar';
-      break;
-      case 4:
-      month = 'apr';
-      break;
-      case 5:
-      month = 'may';
-      break;
-      case 6:
-      month = 'jun';
-      break;
-      case 7:
-      month = 'jul';
-      break;
-      case 8:
-      month = 'aug';
-      break;
-      case 9:
-      month = 'sep';
-      break;
-      case 10:
-      month = 'oct';
-      break;
-      case 11:
-      month = 'nov';
-      break;
-      case 12:
-      month = 'dec';
-      break;
-    }
-    return month;
-  }
-  $('a.navNext').click(function(){
-    offset = offset +1;
-    showScores(globalHtml, getDateString(offset));
-  });
-  $('a.navPrev').click(function(){
-    offset = offset -1;
-    showScores(globalHtml, getDateString(offset));
+    var something = $(html).find('img');
+    console.log(something);
   });
 });
