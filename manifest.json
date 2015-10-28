@@ -1,5 +1,5 @@
 {
-  "mainfest_version":2,
+  "manifest_version":2,
   "name":"NHL Scores",
   "short_name":"NHLscores",
   "description":"follow your fav team with live scores",
@@ -12,7 +12,7 @@
     "*://.live.nhl.com/*"
   ],
 
-  "homepage_ulr":"http://somethingGoesHere.com",
+  "homepage_url":"http://somethingGoesHere.com",
   "browser_action":{
     "default_title":"NHL Scores",
     "default_popup":"popup.html"

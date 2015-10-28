@@ -1,15 +1,15 @@
 (function(){
-  var FeedReader = function(){
-    var feedUrl = 'http://www.gcuf.edu.pk/feed';
+  var NhlReader = function(){
+    var feedUrl = 'http://live.nhl.com/GameData/SeasonSchedule-20152016.json';
     var newsHolder = $('.news-feed');
     var beforeFeed = '<ul>';
     var afterFeed = '</ul>';
-    var beforeFeedItem = '<li>';
+    var beforFeedItem = '<li>';
     var afterFeedItem = '</li>';
 
     function performAjaxSetup(){
       $(document).ajaxStart(function(){
-        $('#reload').html('Loading.. Please Wait');
+        $('#reload').html('Loading.. Please wait');
         $('#reload').off();
       });
 
@@ -23,7 +23,7 @@
       xml:'',
       init:function(){
         this.bindUI();
-        performAjaxSetup();
+        perfomrAjaxSetup();
         this.loadFeed();
       },
       bindUI:function(){
@@ -38,33 +38,24 @@
         newsHolder.empty();
         $.ajax({
           url:feedUrl,
-          dataType:'xml',
+          dataType:'json',
           method:'post',
           beforeSend:function(){},
           success:function(xml){
             feed.populateExt(xml);
           },
-          complete:function(){},
+          complete:function(){}
         });
       },
       populateExt:function(xml){
         var anchors = beforeFeed;
-        $(xml).find('item').each(function(index, elem){
-          var title = $(elem).find('title').text().trim();
-          var link = $(elem).find('link').text().trim();
-          var pubDate = $(this).find('pubDate').text().trim().substring(0,16);
-
-          var anchor = beforeFeedItem + '<a href="' + link + '" target="_blank" title="' + pubDate + '">' + title + '</a>' + afterFeedItem;
-          anchors += anchor;
-        });
-        anchors += afterFeed;
-        newsHolder.append(anchors);
+        console.log(xml);
       }
     };
     return feed;
   };
   $(function(){
-    var Feed = new FeedReader();
-    Feed.init();
+    var start = new NhlReader();
+    start.init();
   });
 })();
