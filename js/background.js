@@ -1,6 +1,11 @@
 (function(){
   var NhlReader = function(){
-    var feedUrl = 'http://live.nhl.com/GameData/SeasonSchedule-20152016.json';
+      // Season Schedule
+    //var feedUrl = 'http://live.nhl.com/GameData/SeasonSchedule-20152016.json';
+      // Game info based on game id
+    //var feedUrl = 'http://live.nhl.com/GameData/20152016/2015020135/PlayByPlay.json';
+      // Might be the leaderboard
+    var feedUrl = 'http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp';
     var newsHolder = $('.news-feed');
     var beforeFeed = '<ul>';
     var afterFeed = '</ul>';
@@ -38,7 +43,7 @@
         newsHolder.empty();
         $.ajax({
           url:feedUrl,
-          dataType:'json',
+          dataType:'jsonp',
           method:'post',
           beforeSend:function(){},
           success:function(xml){
@@ -55,7 +60,7 @@
           ~ Maybe the teams
         */
         var today = new Date();
-        var dd = today.getDate();
+        var dd = today.getDate()-1;
         var mm = today.getMonth()+1;
         var yyyy = today.getFullYear();
 
@@ -66,9 +71,18 @@
         if(mm < 10){
           mm = '0'+mm;
         }
-        today = yyyy+mm+dd;
+        today = yyyy+mm+dd+' '+'20:00:00';
+        var This = yyyy+''+''+mm+''+dd+' '+'20:00:00';
         console.log(xml);
         $(xml).each(function(i,e){
+          var gameTime = e.est;
+          var homeTeam = e.h;
+          var awayTeam = e.a;
+          var gameID = e.id;
+
+          if(This === gameTime){
+            console.log(homeTeam + ' vs '+awayTeam +' '+gameID);
+          }
 
         });
       }

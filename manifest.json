@@ -9,7 +9,7 @@
     "alarms",
     "tabs",
     "webNavigation",
-    "http://live.nhl.com/GameData/SeasonSchedule-20152016.json"
+    "http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp"
   ],
 
   "homepage_url":"http://somethingGoesHere.com",
