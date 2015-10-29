@@ -9,7 +9,7 @@
     "alarms",
     "tabs",
     "webNavigation",
-    "http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp"
+    "http://sports.yahoo.com/nhl/scoreboard/"
   ],
 
   "homepage_url":"http://somethingGoesHere.com",
