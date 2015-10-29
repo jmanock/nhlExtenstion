@@ -6,7 +6,7 @@
       var time = $(e).find('.time').text();
       var awayTeam = $(e).find('.away em').text();
       var homeTeam = $(e).find('.home em').text();
-      console.log(time + ' '+awayTeam + ' at ' + homeTeam);
+      $('#games').append(time +' '+awayTeam+' at '+homeTeam);
     });
 
   });
