@@ -1,6 +1,7 @@
 (function(){
+  var urlPage = 'http://sports.yahoo.com/nhl/scoreboard/';
   $.ajax({
-    url:'http://sports.yahoo.com/nhl/scoreboard/'
+    url:urlPage
   }).done(function(html){
     var open = '<ul>';
     var close = '</ul>';
@@ -40,7 +41,7 @@
         mm = '0'+mm;
       }
       today = yyyy+'-'+mm+'-'+dd;
-      console.log(today);
+      console.log(urlPage+'?date='+today);
     });
 
     $('#prev').on('click', function(){
