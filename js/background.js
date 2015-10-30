@@ -29,7 +29,18 @@
     console.log(today);
     $('#next').on('click', function(){
       dd = dd +1;
-      console.log(today,dd);
+      if(dd ===32){
+        dd = 1;
+        mm = mm+1;
+      }
+      if(dd < 10){
+        dd = '0'+dd;
+      }
+      if(mm < 10){
+        mm = '0'+mm;
+      }
+      today = yyyy+'-'+mm+'-'+dd;
+      console.log(today);
     });
 
     $('#prev').on('click', function(){
