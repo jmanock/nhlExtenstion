@@ -15,6 +15,7 @@
         var awayTeam = $(e).find('.away em').text();
         var homeTeam = $(e).find('.home em').text();
         var score = $(e).find('.score a').text();
+        
         var together = '<li>'+time+' '+awayTeam+' '+score+' '+homeTeam+'</li>';
         open += together;
       });
