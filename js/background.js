@@ -53,7 +53,7 @@
 
         // change(yyyy, mm, dd);
         change(yyyy, mm, yesterday);
-        //ajax(url+today);
+        ajax(url+today);
       }
       date();
 
