@@ -11,10 +11,11 @@
 
       $(html).find('.game').each(function(i,e){
         var time = $(e).find('.time').text();
-        // Find teams send them to get the pic?
+
         var awayTeam = $(e).find('.away em').text();
         var homeTeam = $(e).find('.home em').text();
         var score = $(e).find('.score a').text();
+        // if statment of 30 teams? for the pic?
         
         var together = '<li>'+time+' '+awayTeam+' '+score+' '+homeTeam+'</li>';
         open += together;
