@@ -11,7 +11,9 @@
     "webNavigation",
     "http://sports.yahoo.com/nhl/scoreboard/"
   ],
-
+  "icons":{
+    "teams":"images"
+  },
   "homepage_url":"http://somethingGoesHere.com",
   "browser_action":{
     "default_title":"NHL Scores",
