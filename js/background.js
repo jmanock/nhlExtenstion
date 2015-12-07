@@ -30,7 +30,7 @@
     {link:'../images/tor.png', name:'Toronto'},
     {link:'../images/van.png', name:'Vancouver'},
     {link:'../images/was.png', name:'Washington'},
-    {link:'../images/wpg.png', name:'Winnipeg'}
+    {link:'/../images/wpg.png', name:'Winnipeg'}
   ];
 
   function ajax(kewUrl,x){
@@ -40,16 +40,26 @@
       var open = '<ul>';
       var close = '</ul>';
       var date =x;
-      console.log(teams.length);
+
       $(html).find('.game').each(function(i,e){
         var time = $(e).find('.time').text();
-
+        var awayTeamImg, homeTeamImg;
         var awayTeam = $(e).find('.away em').text();
         var homeTeam = $(e).find('.home em').text();
         var score = $(e).find('.score a').text();
 
+        for(var h = 0; h<teams.length; h++){
+          if(teams[h].name === awayTeam){
+            awayTeamImg = teams[h].link;
+          }
+          if(teams[h].name === homeTeam){
+            homeTeamImg = teams[h].link;
+          }
+        }
 
-        var together = '<li>'+time+' '+awayTeam+' '+score+' '+homeTeam+'</li>';
+        var together = '<li>'+time+' '+
+        awayTeam+' '+score+' '+homeTeam+'</li>'+'<p>'+'<img src="../images/chi.png">';
+
         open += together;
       });
       open += close;
