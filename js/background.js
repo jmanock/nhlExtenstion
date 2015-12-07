@@ -1,5 +1,37 @@
 (function(){
   var url = 'http://sports.yahoo.com/nhl/scoreboard/?date=';
+  var teams = [
+    {link:'../images/ana.png', name:'Anaheim'},
+    {link:'../images/bos.png', name:'Boston'},
+    {link:'../images/buf.png', name:'Buffalo'},
+    {link:'../images/car.png', name:'Carolina'},
+    {link:'../images/cgy.png', name:'Calgary'},
+    {link:'../images/chi.png', name:'Chicago'},
+    {link:'../images/cob.png', name:'Columbus'},
+    {link:'../images/col.png', name:'Colorado'},
+    {link:'../images/dal.png', name:'Dallas'},
+    {link:'../images/det.png', name:'Detroit'},
+    {link:'../images/edm.png', name:'Edmonton'},
+    {link:'../images/fla.png', name:'Florida'},
+    {link:'../images/los.png', name:'Los Angeles'},
+    {link:'../images/min.png', name:'Minnesota'},
+    {link:'../images/mon.png', name:'Montreal'},
+    {link:'../images/nas.png', name:'Nashville'},
+    {link:'../images/njd.png', name:'New Jersey'},
+    {link:'../images/nyi.png', name:'NY Islanders'},
+    {link:'../images/nyr.png', name:'NY Rangers'},
+    {link:'../images/ott.png', name:'Ottawa'},
+    {link:'../images/phi.png', name:'Philadelphia'},
+    {link:'../images/pho.png', name:'Phoenix'},
+    {link:'../images/pit.png', name:'Pittsburgh'},
+    {link:'../images/san.png', name:'San Jose'},
+    {link:'../images/stl.png', name:'St. Louis'},
+    {link:'../images/tam.png', name:'Tampa Bay'},
+    {link:'../images/tor.png', name:'Toronto'},
+    {link:'../images/van.png', name:'Vancouver'},
+    {link:'../images/was.png', name:'Washington'},
+    {link:'../images/wpg.png', name:'Winnipeg'}
+  ];
 
   function ajax(kewUrl,x){
     $.ajax({
@@ -8,15 +40,15 @@
       var open = '<ul>';
       var close = '</ul>';
       var date =x;
-
+      console.log(teams.length);
       $(html).find('.game').each(function(i,e){
         var time = $(e).find('.time').text();
 
         var awayTeam = $(e).find('.away em').text();
         var homeTeam = $(e).find('.home em').text();
         var score = $(e).find('.score a').text();
-        // if statment of 30 teams? for the pic?
-        
+
+
         var together = '<li>'+time+' '+awayTeam+' '+score+' '+homeTeam+'</li>';
         open += together;
       });
