@@ -22,7 +22,7 @@
     {link:'../images/nyr.png', name:'NY Rangers'},
     {link:'../images/ott.png', name:'Ottawa'},
     {link:'../images/phi.png', name:'Philadelphia'},
-    {link:'../images/pho.png', name:'Phoenix'},
+    {link:'../images/pho.png', name:'Arizona'},
     {link:'../images/pit.png', name:'Pittsburgh'},
     {link:'../images/san.png', name:'San Jose'},
     {link:'../images/stl.png', name:'St. Louis'},
@@ -30,7 +30,7 @@
     {link:'../images/tor.png', name:'Toronto'},
     {link:'../images/van.png', name:'Vancouver'},
     {link:'../images/was.png', name:'Washington'},
-    {link:'/../images/wpg.png', name:'Winnipeg'}
+    {link:'../images/wpg.png', name:'Winnipeg'}
   ];
 
   function ajax(kewUrl,x){
@@ -56,9 +56,9 @@
             homeTeamImg = teams[h].link;
           }
         }
-
+        console.log(awayTeamImg);
         var together = '<li>'+time+' '+
-        awayTeam+' '+score+' '+homeTeam+'</li>'+'<p>'+'<img src="../images/chi.png">';
+        awayTeam+' '+score+' '+homeTeam+'</li>';
 
         open += together;
       });
