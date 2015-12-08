@@ -1,36 +1,36 @@
 (function(){
   var url = 'http://sports.yahoo.com/nhl/scoreboard/?date=';
   var teams = [
-    {link:'../images/ana.png', name:'Anaheim'},
-    {link:'../images/bos.png', name:'Boston'},
-    {link:'../images/buf.png', name:'Buffalo'},
-    {link:'../images/car.png', name:'Carolina'},
-    {link:'../images/cgy.png', name:'Calgary'},
-    {link:'../images/chi.png', name:'Chicago'},
-    {link:'../images/cob.png', name:'Columbus'},
-    {link:'../images/col.png', name:'Colorado'},
-    {link:'../images/dal.png', name:'Dallas'},
-    {link:'../images/det.png', name:'Detroit'},
-    {link:'../images/edm.png', name:'Edmonton'},
-    {link:'../images/fla.png', name:'Florida'},
-    {link:'../images/los.png', name:'Los Angeles'},
-    {link:'../images/min.png', name:'Minnesota'},
-    {link:'../images/mon.png', name:'Montreal'},
-    {link:'../images/nas.png', name:'Nashville'},
-    {link:'../images/njd.png', name:'New Jersey'},
-    {link:'../images/nyi.png', name:'NY Islanders'},
-    {link:'../images/nyr.png', name:'NY Rangers'},
-    {link:'../images/ott.png', name:'Ottawa'},
-    {link:'../images/phi.png', name:'Philadelphia'},
-    {link:'../images/pho.png', name:'Arizona'},
-    {link:'../images/pit.png', name:'Pittsburgh'},
-    {link:'../images/san.png', name:'San Jose'},
-    {link:'../images/stl.png', name:'St. Louis'},
-    {link:'../images/tam.png', name:'Tampa Bay'},
-    {link:'../images/tor.png', name:'Toronto'},
-    {link:'../images/van.png', name:'Vancouver'},
-    {link:'../images/was.png', name:'Washington'},
-    {link:'../images/wpg.png', name:'Winnipeg'}
+    {src:'../images/ana.png', name:'Anaheim'},
+    {src:'../images/bos.png', name:'Boston'},
+    {src:'../images/buf.png', name:'Buffalo'},
+    {src:'../images/car.png', name:'Carolina'},
+    {src:'../images/cgy.png', name:'Calgary'},
+    {src:'../images/chi.png', name:'Chicago'},
+    {src:'../images/cob.png', name:'Columbus'},
+    {src:'../images/col.png', name:'Colorado'},
+    {src:'../images/dal.png', name:'Dallas'},
+    {src:'../images/det.png', name:'Detroit'},
+    {src:'../images/edm.png', name:'Edmonton'},
+    {src:'../images/fla.png', name:'Florida'},
+    {src:'../images/los.png', name:'Los Angeles'},
+    {src:'../images/min.png', name:'Minnesota'},
+    {src:'../images/mon.png', name:'Montreal'},
+    {src:'../images/nas.png', name:'Nashville'},
+    {src:'../images/njd.png', name:'New Jersey'},
+    {src:'../images/nyi.png', name:'NY Islanders'},
+    {src:'../images/nyr.png', name:'NY Rangers'},
+    {src:'../images/ott.png', name:'Ottawa'},
+    {src:'../images/phi.png', name:'Philadelphia'},
+    {src:'../images/pho.png', name:'Arizona'},
+    {src:'../images/pit.png', name:'Pittsburgh'},
+    {src:'../images/san.png', name:'San Jose'},
+    {src:'../images/stl.png', name:'St. Louis'},
+    {src:'../images/tam.png', name:'Tampa Bay'},
+    {src:'../images/tor.png', name:'Toronto'},
+    {src:'../images/van.png', name:'Vancouver'},
+    {src:'../images/was.png', name:'Washington'},
+    {src:'../images/wpg.png', name:'Winnipeg'}
   ];
 
   function ajax(kewUrl,x){
@@ -47,24 +47,23 @@
         var awayTeam = $(e).find('.away em').text();
         var homeTeam = $(e).find('.home em').text();
         var score = $(e).find('.score a').text();
-
-        for(var h = 0; h<teams.length; h++){
-          if(teams[h].name === awayTeam){
-            awayTeamImg = teams[h].link;
+        $.each(teams, function(index, team){
+          if(awayTeam === team.name){
+            awayTeamImg = team.src;
           }
-          if(teams[h].name === homeTeam){
-            homeTeamImg = teams[h].link;
+          if(homeTeam === team.name){
+            homeTeamImg = team.src;
           }
-        }
-        console.log(awayTeamImg);
-        var together = '<li>'+time+' '+
-        awayTeam+' '+score+' '+homeTeam+'</li>';
+        });
+        var together = '<li>'+time+' '+'<img src='+awayTeamImg+'></img>'+
+        awayTeam+' '+score+' '+ '<img src='+homeTeamImg+'></img>'+homeTeam+'</li>';
 
         open += together;
       });
       open += close;
       $('#games').append(date);
       $('#games').append(open);
+
     });
   }
 
