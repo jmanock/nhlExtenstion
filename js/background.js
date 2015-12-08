@@ -55,8 +55,11 @@
             homeTeamImg = team.src;
           }
         });
-        var together = '<li>'+time+' '+'<img src='+awayTeamImg+'></img>'+
-        awayTeam+' '+score+' '+ '<img src='+homeTeamImg+'></img>'+homeTeam+'</li>';
+        // var together = '<li>'+time+' '+'<img src='+awayTeamImg+'></img>'+
+        // awayTeam+' '+score+' '+ '<img src='+homeTeamImg+'></img>'+homeTeam+'</li>';
+
+        var together = '<li>'+ '<img src='+awayTeamImg+'></img>'+
+        score + '<img src='+homeTeamImg+'></img>'+ time + '</li>';
 
         open += together;
       });
