@@ -56,8 +56,12 @@
           }
         });
 
-        var together = '<li>'+ '<img src='+awayTeamImg+'></img>'+
-        score + '<img src='+homeTeamImg+'></img>'+ time + '</li>';
+        var together = '<li>'+
+        '<img class="away" src='+awayTeamImg+'></img>'+
+        '<img class="home" src='+homeTeamImg+'></img>'+
+        '<p class="score">'+score+'</p>' +
+
+        '<p class="time">'+time+'</p>' + '</li>';
 
         open += together;
       });
