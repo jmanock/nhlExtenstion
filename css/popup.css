@@ -3,4 +3,9 @@ body{
 }
 li{
   list-style:none;
+  width:100%;
+}
+.date{
+  text-align:center;
+  text-decoration:underline;
 }

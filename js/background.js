@@ -55,8 +55,6 @@
             homeTeamImg = team.src;
           }
         });
-        // var together = '<li>'+time+' '+'<img src='+awayTeamImg+'></img>'+
-        // awayTeam+' '+score+' '+ '<img src='+homeTeamImg+'></img>'+homeTeam+'</li>';
 
         var together = '<li>'+ '<img src='+awayTeamImg+'></img>'+
         score + '<img src='+homeTeamImg+'></img>'+ time + '</li>';
@@ -64,7 +62,7 @@
         open += together;
       });
       open += close;
-      $('#games').append(date);
+      $('#games').append('<h3 class="date">' + date+'</h3>');
       $('#games').append(open);
 
     });
