@@ -56,8 +56,19 @@
           }
         });
 
+        /* TODO:
+          - Change the font
+          - Better color background and text
+          - Size the images a little smaller
+          - Maybe have it fit on one page two collumns
+        */
+        if(score ==='@'){
+          score = '';
+        }
+        
         var together = '<li>'+
         '<img class="away" src='+awayTeamImg+'></img>'+
+        ' @ '+
         '<img class="home" src='+homeTeamImg+'></img>'+
         '<p class="score">'+score+'</p>' +
 
