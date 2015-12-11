@@ -1,12 +1,20 @@
 body{
-  width:400px;
+  width:300px;
   background-color:gray;
 }
 li{
   list-style:none;
-  width:100%;
+  line-height:50px;
 }
 .date{
   text-align:center;
   text-decoration:underline;
+}
+.home{
+  position:absolute;
+  right:10px;
+}
+.away{
+  position:absolute;
+  left:10px;
 }

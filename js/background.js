@@ -61,17 +61,17 @@
           - Better color background and text
           - Size the images a little smaller
           - Maybe have it fit on one page two collumns
+          - Add the stupid images
+          - Put it in the chrome store
         */
         if(score ==='@'){
           score = '';
         }
-        
+
         var together = '<li>'+
         '<img class="away" src='+awayTeamImg+'></img>'+
-        ' @ '+
         '<img class="home" src='+homeTeamImg+'></img>'+
         '<p class="score">'+score+'</p>' +
-
         '<p class="time">'+time+'</p>' + '</li>';
 
         open += together;
