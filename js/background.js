@@ -57,8 +57,7 @@
         });
 
         /* TODO:
-          - Change the font
-          - Better color background and text
+          - Make it a table not list
           - Size the images a little smaller
           - Maybe have it fit on one page two collumns
           - Add the stupid images
@@ -73,7 +72,7 @@
         '<img class="home" src='+homeTeamImg+'></img>'+
         '<p class="score">'+score+'</p>' +
         '<p class="time">'+time+'</p>' + '</li>';
-
+        console.log(awayTeam, homeTeam);
         open += together;
       });
       open += close;
