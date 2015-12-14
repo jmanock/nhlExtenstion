@@ -18,3 +18,11 @@ li{
   position:absolute;
   left:10px;
 }
+.score{
+  font-size:30px;
+  text-align:center;
+}
+.time{
+  font-size:15px;
+  text-align:center;
+}
