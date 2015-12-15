@@ -1,4 +1,4 @@
-body{
+/*body{
   width:300px;
   background-color:gray;
 }
@@ -27,4 +27,15 @@ li{
 .time{
   font-size:15px;
   text-align:center;
+}*/
+
+body{
+  width:300px;
+  background-color:#555555;
+}
+li{
+  list-style:none;
+}
+.score{
+  border:4px solid red;
 }

@@ -56,15 +56,14 @@
           }
         });
 
-        if(score ==='@'){
-          
+        if(score === '@'){
+          score = time;
         }
 
         var together = '<li>'+
         '<img class="away" src='+awayTeamImg+'></img>'+
         '<img class="home" src='+homeTeamImg+'></img>'+
-        '<p class="score">'+score+'</p>' +
-        '<p class="time">'+time+'</p>' + '</li>';
+        '<p class="score">'+score+'</p>' +'</li>';
 
         open += together;
 
