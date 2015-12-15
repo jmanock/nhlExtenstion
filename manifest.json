@@ -12,10 +12,12 @@
     "http://sports.yahoo.com/nhl/scoreboard/"
   ],
   "icons":{
-    "teams":"images"
+    "teams":"images",
+    "48":"images/nhlIcon.png"
   },
   "homepage_url":"http://somethingGoesHere.com",
   "browser_action":{
+    "default_icon":"images/nhlIcon.png",
     "default_title":"NHL Scores",
     "default_popup":"popup.html"
   },
