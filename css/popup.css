@@ -1,41 +1,29 @@
-/*body{
+body{
   width:300px;
-  background-color:gray;
+  background-color:#222222;
 }
 li{
   list-style:none;
-  line-height:50px;
+  margin-bottom:60px;
+  border:solid 4px #222222;
+}
+.score{
+  color:gray;
+  font-size:20px;
+  text-align:center;
 
 }
 .date{
-  text-align:center;
+  text-align:left;
   text-decoration:underline;
-}
-.home{
-  position:absolute;
-  right:10px;
+  font-size:30px;
+  color:#555555;
 }
 .away{
   position:absolute;
-  left:50px;
+  right:5px;
 }
-.score{
-  font-size:30px;
-  text-align:center;
-  border:2px solid red;
-}
-.time{
-  font-size:15px;
-  text-align:center;
-}*/
-
-body{
-  width:300px;
-  background-color:#555555;
-}
-li{
-  list-style:none;
-}
-.score{
-  border:4px solid red;
+.home{
+  position:absolute;
+  left:20px;
 }
