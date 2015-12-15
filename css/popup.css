@@ -5,6 +5,7 @@ body{
 li{
   list-style:none;
   line-height:50px;
+
 }
 .date{
   text-align:center;
@@ -16,11 +17,12 @@ li{
 }
 .away{
   position:absolute;
-  left:10px;
+  left:50px;
 }
 .score{
   font-size:30px;
   text-align:center;
+  border:2px solid red;
 }
 .time{
   font-size:15px;

@@ -57,7 +57,7 @@
         });
 
         if(score ==='@'){
-          score = '';
+          
         }
 
         var together = '<li>'+
