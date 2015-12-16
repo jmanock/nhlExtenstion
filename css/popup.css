@@ -19,11 +19,11 @@ li{
   font-size:30px;
   color:#555555;
 }
-.away{
+.home{
   position:absolute;
   right:5px;
 }
-.home{
+.away{
   position:absolute;
   left:20px;
 }
